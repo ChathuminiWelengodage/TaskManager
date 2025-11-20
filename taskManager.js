@@ -6,17 +6,20 @@ function showMenu(){
     console.log("3.Mark task as completed");
     console.log("4.Delete task");
     console.log("5.Exit");
+
+    r1.question("Enter Your Choice:\n", function(choice){
+    const option = Number(choice);
+    selectMenu(option);
+    r1.close();
+    });
+
 }
 const readline = require("readline");
 const r1 = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-r1.question("Enter Your Choice:\n", function(choice){
-    const option = Number(choice);
-    selectMenu(option);
-    r1.close();
-});
+
 function selectMenu(choice){
     switch(choice) {
         case 1:
@@ -55,3 +58,5 @@ function deleteTask(){
 function exitTask(){ 
     console.log("Exiting tasks");
 }
+
+showMenu();

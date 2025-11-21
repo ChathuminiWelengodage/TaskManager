@@ -1,5 +1,7 @@
+let tasks = [];
+console.log("Welcome to Task Manager!");
 function showMenu(){
-    console.log("Welcome to Task Manager!");
+    
     console.log("                        ");
     console.log("1.List tasks");
     console.log("2.Add new task");
@@ -10,7 +12,7 @@ function showMenu(){
     r1.question("Enter Your Choice:\n", function(choice){
     const option = Number(choice);
     selectMenu(option);
-    r1.close();
+    //r1.close();
     });
 
 }
@@ -24,30 +26,39 @@ function selectMenu(choice){
     switch(choice) {
         case 1:
             listTask();
+            showMenu();
             break;
         case 2:
             addTask();
             break;
         case 3:
             completeTask();
+            showMenu();
             break;
         case 4:
             deleteTask();
+            showMenu();
             break;
         case 5:
             exitTask();
+            r1.close();
             break;
         default:
             console.log("Invalid choice! Please Enter a valid choice");
-            showMenu()
+            showMenu();
             break;   
     }
 }
 function listTask(){ 
-    console.log(" Clean the room\n Take medicine\n Complete assignment\n Watch a movie\n Learn a new cooking recipe");
+    r1.question("Your tasks:\n", function(taskList){
+    });
 }
 function addTask(){ 
-    console.log("Enter new task name:");
+    r1.question("Enter new task name:", function(taskName){
+    tasks.push({ name: taskName, completed: false });
+        console.log("✅ Task added!\n");
+        showMenu();
+    });
 }
 function completeTask(){
      console.log("Enter task number to mark complete:");

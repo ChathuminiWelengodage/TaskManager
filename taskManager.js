@@ -1,3 +1,4 @@
+// array to store all tasks,Each task has a name and a completed status.
 let tasks = [
     { name: "Clean the room", completed: false },
     { name: "Complete the assignment", completed: false },
@@ -6,6 +7,8 @@ let tasks = [
 ];
 
 console.log("Welcome to Task Manager!");
+
+//show menu list to user
 function showMenu(){
     
     console.log("                        ");
@@ -16,18 +19,21 @@ function showMenu(){
     console.log("5.Exit");
 
     r1.question("Enter Your Choice:\n", function(choice){
-    const option = Number(choice);
+    const option = Number(choice); //convert input to a number
     selectMenu(option);
-    //r1.close();
     });
 
 }
+// import readline module to handle user input via command line
 const readline = require("readline");
+
+// Create readline interface for input and output
 const r1 = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
+//select the menu 
 function selectMenu(choice){
     switch(choice) {
         case 1:
@@ -55,6 +61,8 @@ function selectMenu(choice){
             break;   
     }
 }
+
+//list all tasks
 function listTask(){ 
     if(tasks.length === 0){
         console.log("No tasks available.");
@@ -70,7 +78,8 @@ function listTask(){
         console.log((i + 1) + ". " + status + " " + task.name);
     }
 }
-    
+
+//Add a new task to the tasklist
 function addTask(){ 
     r1.question("Enter new task name:", function(taskName){
     tasks.push({ name: taskName, completed: false });
@@ -78,6 +87,8 @@ function addTask(){
         showMenu();
     });
 }
+
+//mark the completed tasks
 function completeTask(){
     if(tasks.length === 0) {
         console.log("No tasks available to mark complete.\n");
@@ -96,9 +107,11 @@ function completeTask(){
     });
 }
 
+//Delete a task from tasklist
 function deleteTask(){ 
     console.log("Enter task number to delete:");
 }
+
 function exitTask(){ 
     console.log("👋 Exiting program. Goodbye!");
 }

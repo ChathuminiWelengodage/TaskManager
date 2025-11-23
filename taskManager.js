@@ -79,13 +79,28 @@ function addTask(){
     });
 }
 function completeTask(){
-     console.log("Enter task number to mark complete:");
+    if(tasks.length === 0) {
+        console.log("No tasks available to mark complete.\n");
+        showMenu();
+        return;
     }
+    r1.question("Enter task number to mark complete: ", function(number) {
+        let taskNumber = Number(number);
+        if(taskNumber> 0 && taskNumber <= tasks.length){
+            tasks[taskNumber - 1].completed = true;
+        console.log(`✅ Task ${taskNumber} marked as complete!\n`);
+        } else {
+            console.log("Invalid task number!\n");
+        }
+        showMenu();
+    });
+}
+
 function deleteTask(){ 
     console.log("Enter task number to delete:");
 }
 function exitTask(){ 
-    console.log("Exiting tasks");
+    console.log("👋 Exiting program. Goodbye!");
 }
 
 showMenu();

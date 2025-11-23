@@ -1,4 +1,4 @@
-# TaskManager
+
 # Task Manager – Command Line Application
 
 A simple and interactive **Task Manager** built using **Node.js**.  

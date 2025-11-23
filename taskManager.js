@@ -99,7 +99,8 @@ function completeTask(){
         let taskNumber = Number(number);
         if(taskNumber> 0 && taskNumber <= tasks.length){
             tasks[taskNumber - 1].completed = true;
-        console.log(`✅ Task ${taskNumber} marked as complete!\n`);
+        console.log("✅ Task " + taskNumber + " marked as complete!\n");
+
         } else {
             console.log("Invalid task number!\n");
         }
@@ -109,7 +110,12 @@ function completeTask(){
 
 //Delete a task from tasklist
 function deleteTask(){ 
-    console.log("Enter task number to delete:");
+    if (tasks.length === 0) {
+        console.log("No tasks available to delete.\n");
+        showMenu();
+        return;
+    }
+    
 }
 
 function exitTask(){ 

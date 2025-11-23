@@ -65,7 +65,7 @@ function listTask(){
 
     for (let i = 0; i < tasks.length; i++) {
         let task = tasks[i];
-        let status = task.completed ? "[✔]" : "[ ]";
+        let status = task.completed ? "[X]" : "[ ]";
 
         console.log((i + 1) + ". " + status + " " + task.name);
     }

@@ -1,4 +1,10 @@
-let tasks = [];
+let tasks = [
+    { name: "Clean the room", completed: false },
+    { name: "Complete the assignment", completed: false },
+    { name: "Study", completed: false },
+    { name: "Prepare lunch", completed: false }
+];
+
 console.log("Welcome to Task Manager!");
 function showMenu(){
     
@@ -50,9 +56,21 @@ function selectMenu(choice){
     }
 }
 function listTask(){ 
-    r1.question("Your tasks:\n", function(taskList){
-    });
+    if(tasks.length === 0){
+        console.log("No tasks available.");
+        return;
+    }
+
+    console.log("\nYour Tasks:");
+
+    for (let i = 0; i < tasks.length; i++) {
+        let task = tasks[i];
+        let status = task.completed ? "[✔]" : "[ ]";
+
+        console.log((i + 1) + ". " + status + " " + task.name);
+    }
 }
+    
 function addTask(){ 
     r1.question("Enter new task name:", function(taskName){
     tasks.push({ name: taskName, completed: false });

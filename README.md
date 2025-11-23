@@ -10,10 +10,10 @@ This console-based application allows users to manage their daily tasks by listi
 
 This Task Manager application helps users keep track of their to-do items through a simple, menu-driven command-line interface.
 
-### ✅Implemented Functionalities
+### Implemented Functionalities
 
 - ✔ **List all tasks** — Shows tasks with status icons (`[X]` / `[ ]`)
-- ✔ **Add a new task** — Add tasks with a custom name
+- ✔ **Add a new task** 
 - ✔ **Mark a task as completed**
 - ✔ **Delete a task**
 - ✔ **Exit the program**

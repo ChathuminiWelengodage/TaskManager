@@ -115,8 +115,18 @@ function deleteTask(){
         showMenu();
         return;
     }
-    
+    r1.question("Enter task number to delete: ", function(number) {
+        let taskNumber = Number(number);
+        if(taskNumber > 0 && taskNumber <= tasks.length){
+            let removedTask = tasks.splice(taskNumber - 1, 1);
+            console.log( "❌ Task " + taskNumber + " deleted!\n");
+        } else {
+            console.log("Invalid task number!\n");
+        }
+        showMenu();
+    });
 }
+    
 
 function exitTask(){ 
     console.log("👋 Exiting program. Goodbye!");

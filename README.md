@@ -18,7 +18,7 @@ This Task Manager application helps users keep track of their to-do items throug
 - **Mark Task as Completed:** Mark any task as complete by entering its number.  
 - **Delete Task:** Remove tasks from the list by entering the task number.  
 - **Exit:** Close the application safely.
-- 
+  
 ### Install Dependencies
 This project does **not require any external dependencies**.  
 Only built-in **Node.js `readline` module** is used.

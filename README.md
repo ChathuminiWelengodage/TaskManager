@@ -28,7 +28,6 @@ So no need to run `npm install`.
 1️⃣ **Install Node.js**
 
 - This application runs on Node.js, so the user must install it first.
-- Download and install Node.js from: https://nodejs.org
 - Recommended: LTS version (Long-Term Support).
 
 2️⃣ **Get the Project Files**

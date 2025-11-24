@@ -24,25 +24,25 @@ Only built-in **Node.js `readline` module** is used.
 
 So no need to run `npm install`.
 ## How to Run the Application
-### Requirements
-- **Node.js** (v24 recommended)
-- No additional dependencies are required.
+1️⃣ **Install Node.js**
 
-### Steps
-1. **Clone the Repository**
+- This application runs on Node.js, so the user must install it first.
+- Download and install Node.js from: https://nodejs.org
+- Recommended: LTS version (Long-Term Support).
+
+2️⃣ **Get the Project Files**
+ - Clone from GitHub
 ```
-git clone <repository-link>
+git clone https://github.com/ChathuminiWelengodage/TaskManager.git
+cd TaskManager
 ```
-2. **Navigate to the Project Folder**
-```
-cd <folder-name>
-```
-3. **Run the Application**
+3️⃣ **Run the Application**
+- Open terminal/PowerShell inside the project folder and run:
 ```
 node taskManager.js
 ```
 ---
-### Example
+### Now,you should see 
 ```
 Welcome to Task Manager!
 

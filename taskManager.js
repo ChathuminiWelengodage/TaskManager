@@ -6,7 +6,7 @@ let tasks = [
     { name: "Prepare lunch", completed: false }
 ];
 
-console.log("Welcome to Task Manager!");
+console.log("\nWelcome to Task Manager!");
 
 //Show menu list to the user
 function showMenu(){
@@ -45,7 +45,7 @@ function selectMenu(choice){
             break;
         case 3:
             completeTask();
-            showMenu();
+            //showMenu();
             break;
         case 4:
             deleteTask();
@@ -101,7 +101,7 @@ function completeTask(){
 
         //Check validation whether entered number is inside array range
         if(taskNumber> 0 && taskNumber <= tasks.length){
-            
+
             tasks[taskNumber - 1].completed = true;
         console.log("✅ Task " + taskNumber + " marked as complete!\n");
 

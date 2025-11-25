@@ -1,4 +1,4 @@
-// array to store all tasks,Each task has a name and a completed status.
+// Array to store all tasks,Each task has a name and a completed status.
 let tasks = [
     { name: "Clean the room", completed: false },
     { name: "Complete the assignment", completed: false },
@@ -8,7 +8,7 @@ let tasks = [
 
 console.log("Welcome to Task Manager!");
 
-//show menu list to user
+//Show menu list to the user
 function showMenu(){
     
     console.log("                        ");
@@ -24,7 +24,7 @@ function showMenu(){
     });
 
 }
-// import readline module to handle user input via command line
+// Import readline module to handle user input via command line
 const readline = require("readline");
 
 // Create readline interface for input and output
@@ -33,7 +33,7 @@ const r1 = readline.createInterface({
     output: process.stdout
 });
 
-//select the menu 
+//Handle user choice
 function selectMenu(choice){
     switch(choice) {
         case 1:
@@ -53,7 +53,7 @@ function selectMenu(choice){
             break;
         case 5:
             exitTask();
-            r1.close();
+            r1.close(); // Stop input
             break;
         default:
             console.log("Invalid choice! Please Enter a valid choice");
@@ -62,7 +62,7 @@ function selectMenu(choice){
     }
 }
 
-//list all tasks
+//List all tasks
 function listTask(){ 
     if(tasks.length === 0){
         console.log("No tasks available.");
@@ -71,9 +71,10 @@ function listTask(){
 
     console.log("\nYour Tasks:");
 
+    // Loop through all tasks
     for (let i = 0; i < tasks.length; i++) {
         let task = tasks[i];
-        let status = task.completed ? "[X]" : "[ ]";
+        let status = task.completed ? "[X]" : "[ ]"; 
 
         console.log((i + 1) + ". " + status + " " + task.name);
     }
@@ -88,7 +89,7 @@ function addTask(){
     });
 }
 
-//mark the completed tasks
+//Mark the completed tasks
 function completeTask(){
     if(tasks.length === 0) {
         console.log("No tasks available to mark complete.\n");
@@ -97,6 +98,8 @@ function completeTask(){
     }
     r1.question("Enter task number to mark complete: ", function(number) {
         let taskNumber = Number(number);
+
+        //Check validation whether entered number is inside array range
         if(taskNumber> 0 && taskNumber <= tasks.length){
             tasks[taskNumber - 1].completed = true;
         console.log("✅ Task " + taskNumber + " marked as complete!\n");
@@ -117,6 +120,7 @@ function deleteTask(){
     }
     r1.question("Enter task number to delete: ", function(number) {
         let taskNumber = Number(number);
+
         if(taskNumber > 0 && taskNumber <= tasks.length){
             let removedTask = tasks.splice(taskNumber - 1, 1);
             console.log( "❌ Task " + taskNumber + " deleted!\n");
@@ -127,7 +131,7 @@ function deleteTask(){
     });
 }
     
-
+// Exit from the programm
 function exitTask(){ 
     console.log("👋 Exiting program. Goodbye!");
 }

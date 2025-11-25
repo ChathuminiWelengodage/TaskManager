@@ -101,6 +101,7 @@ function completeTask(){
 
         //Check validation whether entered number is inside array range
         if(taskNumber> 0 && taskNumber <= tasks.length){
+            
             tasks[taskNumber - 1].completed = true;
         console.log("✅ Task " + taskNumber + " marked as complete!\n");
 

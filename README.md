@@ -1,5 +1,5 @@
 
-# Task Manager – Command Line Application
+# Task Manager – Console-Based Application
 
 A simple and interactive **Task Manager** built using **Node.js**.  
 This console-based application allows users to manage their daily tasks by listing, adding, completing, and deleting tasks directly from the terminal.
